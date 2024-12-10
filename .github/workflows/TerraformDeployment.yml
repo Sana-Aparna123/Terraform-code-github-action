@@ -3,10 +3,10 @@ name: Terraform Deployment
 on:
   push:
     branches:
-      - prod-1 # Change this to your branch name if differen
+      - prod-1 # Change this to your branch name if different
   pull_request:
     branches:
-      - prod-1# Change this to your branch name if different
+      - prod-1 # Change this to your branch name if different
 
 jobs:
   terraform:
@@ -14,8 +14,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
     - name: Checkout code
       uses: actions/checkout@v3
 
@@ -28,11 +26,12 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install -y git
-        
+
     - name: Run tests
       run: |
         # Your test commands here
         echo "Running tests..."
+
     - name: Download and Install AWS CLI
       run: |
         curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
@@ -56,31 +55,25 @@ jobs:
         terraform -v
 
     - name: Set working directory
+      # Uncomment and update if you need to use a specific directory
       # run: cd apu
 
     - name: Terraform Init
       run: terraform init
+      # Uncomment and specify if needed
       # working-directory: apu
 
     - name: Terraform Plan
       run: terraform plan
+      # Uncomment and specify if needed
       # working-directory: apu
 
     - name: Terraform Apply
       run: terraform apply -auto-approve
+      # Uncomment and specify if needed
       # working-directory: apu
 
-   
-    - name: terraform destroy
+    - name: Terraform Destroy
       run: terraform destroy -auto-approve
-      # working-directory: appu
-
-
-
-
-
-
-
-
-
-
+      # Uncomment and specify if needed
+      # working-directory: apu
