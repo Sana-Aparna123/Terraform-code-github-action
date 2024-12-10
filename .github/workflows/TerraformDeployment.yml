@@ -55,25 +55,25 @@ jobs:
         sudo mv terraform /usr/local/bin/
         terraform -v
 
-    - name: Set working directory
-      run: cd appu
+    # - name: Set working directory
+    #   run: cd appu
 
     - name: Terraform Init
       run: terraform init
-      working-directory: appu
+      # working-directory: appu
 
     - name: Terraform Plan
       run: terraform plan
-      working-directory: appu
+      # working-directory: appu
 
     - name: Terraform Apply
       run: terraform apply -auto-approve
-      working-directory: appu
+      # working-directory: appu
 
    
     - name: terraform destroy
       run: terraform destroy -auto-approve
-      working-directory: appu
+      # working-directory: appu
 
 
 
