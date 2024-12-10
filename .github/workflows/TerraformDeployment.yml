@@ -56,7 +56,7 @@ jobs:
         terraform -v
 
     - name: Set working directory
-      run: cd jai
+      run: cd apu
 
     - name: Terraform Init
       run: terraform init
