@@ -56,24 +56,24 @@ jobs:
         terraform -v
 
     - name: Set working directory
-      # run: cd apu
+      run: cd appu
 
     - name: Terraform Init
       run: terraform init
-      # working-directory: apu
+      working-directory: appu
 
     - name: Terraform Plan
       run: terraform plan
-      # working-directory: apu
+      working-directory: appu
 
     - name: Terraform Apply
       run: terraform apply -auto-approve
-      # working-directory: apu
+      working-directory: appu
 
    
     - name: terraform destroy
       run: terraform destroy -auto-approve
-      # working-directory: appu
+      working-directory: appu
 
 
 
